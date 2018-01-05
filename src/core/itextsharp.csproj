@@ -10,6 +10,12 @@
     <Description>An unofficial .NET Core port of the last LGPL version of the iTextSharp (V4.1.6).</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="iTextSharp\text\pdf\fonts\*.afm" />
+    <None Remove="iTextSharp\text\pdf\fonts\glyphlist.txt" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\*.afm" />
+    <EmbeddedResource Include="iTextSharp\text\pdf\fonts\glyphlist.txt" />
+  </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net40' Or '$(TargetFramework)' == 'net45' ">
     <PackageReference Include="BouncyCastle" Version="1.8.1" />
   </ItemGroup>
