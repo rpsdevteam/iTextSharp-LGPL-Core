@@ -74,7 +74,7 @@ namespace iTextSharp.text.rtf.parser.destinations {
         private StringBuilder buffer = new StringBuilder();
 
         /* picttype */
-        private int pictureType = Image.ORIGINAL_NONE;
+      //  private int pictureType = Image.ORIGINAL_NONE;
         public const int ORIGINAL_NONE = 0;
         public const int ORIGINAL_GIF = 3;
         public const int ORIGINAL_TIFF = 5;
@@ -178,7 +178,6 @@ namespace iTextSharp.text.rtf.parser.destinations {
         private MemoryStream dataOS = null;
         
         public RtfDestinationShppict() : base(null) {
-            this.pictureType = pictureType; //get rid of a warning
         }
 
         /**
@@ -339,14 +338,14 @@ namespace iTextSharp.text.rtf.parser.destinations {
                 if (ctrlWordData.ctrlWord.Equals("blipuid")) { skipCtrlWord = true; this.rtfParser.SetTokeniserStateSkipGroup(); result = true;}
                 if (ctrlWordData.ctrlWord.Equals("picprop")) { skipCtrlWord = true; this.rtfParser.SetTokeniserStateSkipGroup(); result = true;}
                 if (ctrlWordData.ctrlWord.Equals("pict")) { result = true;}
-                if (ctrlWordData.ctrlWord.Equals("emfblip")) { result = true; pictureType = Image.ORIGINAL_NONE;}
-                if (ctrlWordData.ctrlWord.Equals("pngblip")) { result = true; pictureType = Image.ORIGINAL_PNG;}
-                if (ctrlWordData.ctrlWord.Equals("jepgblip")) { result = true; pictureType = Image.ORIGINAL_JPEG;}
-                if (ctrlWordData.ctrlWord.Equals("macpict")) { result = true; pictureType = Image.ORIGINAL_NONE;}
-                if (ctrlWordData.ctrlWord.Equals("pmmetafile")) { result = true; pictureType = Image.ORIGINAL_NONE;}
-                if (ctrlWordData.ctrlWord.Equals("wmetafile")) { result = true; pictureType = Image.ORIGINAL_WMF;}
-                if (ctrlWordData.ctrlWord.Equals("dibitmap")) { result = true; pictureType = Image.ORIGINAL_NONE;}
-                if (ctrlWordData.ctrlWord.Equals("wbitmap")) { result = true; pictureType = Image.ORIGINAL_BMP;}
+                if (ctrlWordData.ctrlWord.Equals("emfblip")) { result = true; /*pictureType = Image.ORIGINAL_NONE;*/}
+                if (ctrlWordData.ctrlWord.Equals("pngblip")) { result = true; /*pictureType = Image.ORIGINAL_PNG;*/}
+                if (ctrlWordData.ctrlWord.Equals("jepgblip")) { result = true; /*pictureType = Image.ORIGINAL_JPEG;*/}
+                if (ctrlWordData.ctrlWord.Equals("macpict")) { result = true; /*pictureType = Image.ORIGINAL_NONE;*/}
+                if (ctrlWordData.ctrlWord.Equals("pmmetafile")) { result = true; /*pictureType = Image.ORIGINAL_NONE;*/}
+                if (ctrlWordData.ctrlWord.Equals("wmetafile")) { result = true; /*pictureType = Image.ORIGINAL_WMF;*/}
+                if (ctrlWordData.ctrlWord.Equals("dibitmap")) { result = true; /*pictureType = Image.ORIGINAL_NONE;*/}
+                if (ctrlWordData.ctrlWord.Equals("wbitmap")) { result = true; /*pictureType = Image.ORIGINAL_BMP;*/}
                 /* bitmap information */
                 if (ctrlWordData.ctrlWord.Equals("wbmbitspixel")) { result = true;}
                 if (ctrlWordData.ctrlWord.Equals("wbmplanes")) { result = true;}
