@@ -176,9 +176,12 @@ namespace iTextSharp.text.rtf.parser.destinations {
         private const int PIXEL_TWIPS_FACTOR = 15;
         
         private MemoryStream dataOS = null;
-        
-        public RtfDestinationShppict() : base(null) {
+
+        public RtfDestinationShppict() : base(null)
+        {
+#pragma warning disable 1717            
             this.pictureType = pictureType; //get rid of a warning
+#pragma warning restore 1717
         }
 
         /**
