@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Text;
+using itextsharp.System.Encodings;
+
 /*
  * $Id: IanaEncodings.cs,v 1.4 2008/05/13 11:26:14 psoares33 Exp $
  * 
@@ -543,9 +545,9 @@ namespace iTextSharp.text.xml.simpleparser {
             if (nameU.Equals("UNICODELITTLE"))
                 return new UnicodeEncoding(false, true);
             if (map.ContainsKey(nameU))
-                return Encoding.GetEncoding((int)map[nameU]);
+                return EncodingsCatalog.GetEncoding((int)map[nameU]);
             else
-                return Encoding.GetEncoding(name);
+                return EncodingsCatalog.GetEncoding(name);
         }
     }
 }

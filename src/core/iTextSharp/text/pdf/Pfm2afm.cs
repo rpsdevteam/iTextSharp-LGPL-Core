@@ -1,6 +1,8 @@
 using System;
 using System.IO;
 using System.Text;
+using itextsharp.System.Encodings;
+
 /*
  * Copyright 2005 by Paulo Soares.
  *
@@ -152,7 +154,7 @@ namespace iTextSharp.text.pdf {
         /** Creates a new instance of Pfm2afm */
         private Pfm2afm(RandomAccessFileOrArray inp, Stream outp) {
             this.inp = inp;
-            encoding = Encoding.GetEncoding(1252);
+            encoding = EncodingsCatalog.GetEncoding(1252);
             this.outp = new StreamWriter(outp, encoding);
         }
         

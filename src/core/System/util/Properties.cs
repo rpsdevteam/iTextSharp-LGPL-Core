@@ -2,6 +2,7 @@ using System;
 using System.Text;
 using System.IO;
 using System.Collections;
+using itextsharp.System.Encodings;
 
 namespace System.util
 {
@@ -71,7 +72,7 @@ namespace System.util
         }
 
         public void Load(Stream inStream) {
-            StreamReader inp = new StreamReader(inStream, Encoding.GetEncoding(1252));
+            StreamReader inp = new StreamReader(inStream, EncodingsCatalog.GetEncoding(1252));
             while (true) {
                 // Get next line
                 String line = inp.ReadLine();

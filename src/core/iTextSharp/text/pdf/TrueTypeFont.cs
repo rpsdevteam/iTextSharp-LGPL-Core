@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Text;
 using System.Collections;
-
+using itextsharp.System.Encodings;
 using iTextSharp.text;
 
 /*
@@ -696,7 +696,7 @@ namespace iTextSharp.text.pdf {
         protected string ReadStandardString(int length) {
             byte[] buf = new byte[length];
             rf.ReadFully(buf);
-            return System.Text.Encoding.GetEncoding(1252).GetString(buf);
+            return EncodingsCatalog.GetEncoding(1252).GetString(buf);
         }
     
         /** Reads a Unicode <CODE>string</CODE> from the font file. Each character is

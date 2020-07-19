@@ -3,6 +3,7 @@ using System.IO;
 using System.Net;
 using iTextSharp.text;
 using System.Collections;
+using itextsharp.System.Encodings;
 
 /*
  * $Id: MetaDo.cs,v 1.4 2008/05/13 11:25:36 psoares33 Exp $
@@ -471,7 +472,7 @@ namespace iTextSharp.text.pdf.codec.wmf
                     }
                     string s;
                     try {
-                        s = System.Text.Encoding.GetEncoding(1252).GetString(text, 0, k);
+                        s = EncodingsCatalog.GetEncoding(1252).GetString(text, 0, k);
                     }
                     catch  {
                         s = System.Text.ASCIIEncoding.ASCII.GetString(text, 0, k);
@@ -492,7 +493,7 @@ namespace iTextSharp.text.pdf.codec.wmf
                     }
                     string s;
                     try {
-                        s = System.Text.Encoding.GetEncoding(1252).GetString(text, 0, k);
+                        s = EncodingsCatalog.GetEncoding(1252).GetString(text, 0, k);
                     }
                     catch {
                         s = System.Text.ASCIIEncoding.ASCII.GetString(text, 0, k);

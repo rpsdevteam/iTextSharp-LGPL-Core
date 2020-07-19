@@ -3,6 +3,7 @@ using System.Collections;
 using System.Text;
 using System.Globalization;
 using System.IO;
+using itextsharp.System.Encodings;
 using Org.BouncyCastle.X509;
 using Org.BouncyCastle.Asn1;
 using Org.BouncyCastle.Asn1.Cms;
@@ -933,7 +934,7 @@ namespace iTextSharp.text.pdf {
         
         private static String GetStringFromGeneralName(Asn1Object names) {
             DerTaggedObject taggedObject = (DerTaggedObject) names ;
-            return Encoding.GetEncoding(1252).GetString(Asn1OctetString.GetInstance(taggedObject, false).GetOctets());
+            return EncodingsCatalog.GetEncoding(1252).GetString(Asn1OctetString.GetInstance(taggedObject, false).GetOctets());
         }
 
         /**
