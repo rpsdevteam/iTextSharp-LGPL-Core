@@ -3,6 +3,7 @@ using System.Text;
 using System.Collections;
 using System.Net;
 using System.IO;
+using itextsharp.System.Encodings;
 
 /*
  * Copyright 2003 by Paulo Soares.
@@ -190,13 +191,13 @@ namespace iTextSharp.text.pdf {
                     return vs.ToUnicodeString();
                 try {
                     if (encoding.Equals(PdfName.SHIFT_JIS))
-                        return Encoding.GetEncoding(932).GetString(b);
+                        return EncodingsCatalog.GetEncoding(932).GetString(b);
                     else if (encoding.Equals(PdfName.UHC))
-                        return Encoding.GetEncoding(949).GetString(b);
+                        return EncodingsCatalog.GetEncoding(949).GetString(b);
                     else if (encoding.Equals(PdfName.GBK))
-                        return Encoding.GetEncoding(936).GetString(b);
+                        return EncodingsCatalog.GetEncoding(936).GetString(b);
                     else if (encoding.Equals(PdfName.BIGFIVE))
-                        return Encoding.GetEncoding(950).GetString(b);
+                        return EncodingsCatalog.GetEncoding(950).GetString(b);
                 }
                 catch  {
                 }

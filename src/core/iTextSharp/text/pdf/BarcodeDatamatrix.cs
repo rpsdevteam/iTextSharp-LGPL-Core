@@ -2,6 +2,8 @@ using System;
 using iTextSharp.text;
 using iTextSharp.text.pdf.codec;
 using System.Collections;
+using itextsharp.System.Encodings;
+
 /*
  * $Id: BarcodeDatamatrix.cs,v 1.3 2007/05/21 10:56:38 psoares33 Exp $
  *
@@ -673,7 +675,7 @@ namespace iTextSharp.text.pdf {
         * @throws java.io.UnsupportedEncodingException on error
         */
         public int Generate(String text) {
-            byte[] t = System.Text.Encoding.GetEncoding(1252).GetBytes(text);
+            byte[] t = EncodingsCatalog.GetEncoding(1252).GetBytes(text);
             return Generate(t, 0, t.Length);
         }
         

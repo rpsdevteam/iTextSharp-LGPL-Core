@@ -3,6 +3,8 @@ using System.IO;
 using System.Text;
 using System.Collections;
 using System.Globalization;
+using itextsharp.System.Encodings;
+
 /*
  * Copyright 2003 Paulo Soares
  *
@@ -603,7 +605,7 @@ namespace iTextSharp.text.xml.simpleparser {
                         break;
                     bi.WriteByte((byte)c);
                 }
-                decl = Encoding.GetEncoding(37).GetString(bi.ToArray());//cp037 ebcdic
+                decl = EncodingsCatalog.GetEncoding(37).GetString(bi.ToArray());//cp037 ebcdic
             }
             if (decl != null) {
                 decl = GetDeclaredEncoding(decl);

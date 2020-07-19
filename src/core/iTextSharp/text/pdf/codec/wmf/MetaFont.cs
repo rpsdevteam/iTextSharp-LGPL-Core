@@ -1,4 +1,5 @@
 using System;
+using itextsharp.System.Encodings;
 
 /*
  * $Id: MetaFont.cs,v 1.7 2008/05/13 11:25:37 psoares33 Exp $
@@ -116,7 +117,7 @@ namespace iTextSharp.text.pdf.codec.wmf {
                 name[k] = (byte)c;
             }
             try {
-                faceName = System.Text.Encoding.GetEncoding(1252).GetString(name, 0, k);
+                faceName = EncodingsCatalog.GetEncoding(1252).GetString(name, 0, k);
             }
             catch {
                 faceName = System.Text.ASCIIEncoding.ASCII.GetString(name, 0, k);
