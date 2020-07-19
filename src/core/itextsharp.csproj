@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net45;net40</TargetFrameworks>
     <PackageId>iTextSharp-LGPL-Core</PackageId>
-    <VersionPrefix>1.1</VersionPrefix>
+    <VersionPrefix>1.2.0</VersionPrefix>
     <Authors>Ben Meredith</Authors>
     <PackageTags>itextsharp pdf core</PackageTags>
     <PackageProjectUrl>https://github.com/bmeredith/iTextSharp-LGPL-Core</PackageProjectUrl>
