@@ -2834,7 +2834,8 @@ namespace iTextSharp.text.pdf {
                         PdfObject v = (PdfObject)ar[k];
                         if (v.IsIndirect()) {
                             int num = ((PRIndirectReference)v).Number;
-                            if (num >= xrefObj.Count || (!partial && xrefObj[num] == null)) {
+
+                            if (num >= xrefObj.Count || num < 0 || (!partial && xrefObj[num] == null)) {
                                 ar[k] = PdfNull.PDFNULL;
                                 continue;
                             }

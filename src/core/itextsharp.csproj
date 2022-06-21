@@ -29,4 +29,7 @@
       <Version>4.7.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="itextsharp.sln" />
+  </ItemGroup>
 </Project>
